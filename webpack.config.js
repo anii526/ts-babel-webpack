@@ -50,4 +50,19 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    port: 8080,
+    host: "localhost",
+    hot: true,
+    inline: true,
+    open: true,
+    openPage: "",
+    historyApiFallback: true,
+    proxy: {
+        "/api": {
+            target: `http://localhost:4000`,
+        },
+        cookieDomainRewrite: "",
+    },
+},
 };

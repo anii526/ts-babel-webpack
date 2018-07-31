@@ -8,7 +8,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "dev:server": "serve dist",
-    "dev:build": "webpack --mode=development --watch",
+    "dev:build": "webpack-dev-server --mode=development --hot",
     "start": "run-p dev:*"
   },
   "devDependencies": {
@@ -28,7 +28,8 @@
     "typescript": "^2.9.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1"
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {}
 }
