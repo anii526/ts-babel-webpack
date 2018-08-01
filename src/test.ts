@@ -1,13 +1,13 @@
 import { ITest } from "./ITest";
 
-export class Test implements ITest{
-    constructor(){
+export class Test implements ITest {
+    constructor() {
         // 
     }
-    public init():void{
-        console.log('init');            
+    public init(): void {
+        console.log('init');
     }
-    public appendText(text: string = 'Горячая перезагрузка во всей своей КУРСЕЕЕЕЕЕ!!!!!!!!') {
+    public appendText(text: string = 'Горячая перезагрузка во всей своей КУРЕЕЕЕЕЕ!!!!!!!!') {
         const root = document.getElementById('root');
         const el = document.createElement('div');
         el.innerText = text;
