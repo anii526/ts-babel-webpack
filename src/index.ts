@@ -1,14 +1,9 @@
 import './index.css';
+import { Test } from './test';
 
-function appendText(text: string = 'Горячая перезагрузка во всей своей КУРСЕЕЕЕЕЕ!!!!!!!!') {
-  const root = document.getElementById('root');
+const test = new Test();
+test.init();
+test.appendText();
+console.log(test);
 
-  const el = document.createElement('div');
-  el.innerText = text;
 
-  if (root) {
-    root.appendChild(el);
-  }
-}
-
-appendText();

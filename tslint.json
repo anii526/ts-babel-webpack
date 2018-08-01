@@ -13,6 +13,7 @@
         "constructor": "never"
       }
     ],
+    "no-console": [false],
     "object-literal-sort-keys": false,
     "no-debugger": false,
     "member-ordering": [
