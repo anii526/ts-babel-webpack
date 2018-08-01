@@ -1,6 +1,6 @@
 import './index.css';
 
-function appendText(text: string = 'Горячая перезагрузка во всей своей КРЫСЕ!!!!!!!!') {
+function appendText(text: string = 'Горячая перезагрузка во всей своей КУРСЕЕЕЕЕЕ!!!!!!!!') {
   const root = document.getElementById('root');
 
   const el = document.createElement('div');
