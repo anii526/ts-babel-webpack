@@ -9,60 +9,59 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const development = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: './src/index.ts',
-  devtool: development ? 'inline-source-map' : 'source-map',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['.js', '.json', '.ts'],
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles.css',
-    }),
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(ts|js)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-    ],
-  },
-  devServer: {
-    port: 8080,
-    host: "localhost",
-    hot: true,
-    inline: true,
-    open: true,
-    openPage: "",
-    historyApiFallback: true,
-    proxy: {
-        "/api": {
-            target: `http://localhost:4000`,
-        },
-        cookieDomainRewrite: "",
+    entry: './src/index.ts',
+    devtool: development ? 'inline-source-map' : 'source-map',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
-},
+    resolve: {
+        extensions: ['.js', '.json', '.ts'],
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true,
+            }),
+            new OptimizeCSSAssetsPlugin({}),
+        ],
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'styles.css',
+        }),
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+        })
+    ],
+    module: {
+        rules: [{
+                test: /\.(ts|js)$/,
+                exclude: /node_modules/,
+                use: 'babel-loader',
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+        ],
+    },
+    devServer: {
+        port: 8080,
+        host: "localhost",
+        hot: true,
+        inline: true,
+        open: true,
+        openPage: "",
+        historyApiFallback: true,
+        proxy: {
+            "/api": {
+                target: `http://localhost:4000`,
+            },
+            cookieDomainRewrite: "",
+        },
+    },
 };

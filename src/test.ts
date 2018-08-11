@@ -1,3 +1,4 @@
+import "pixi.js";
 import { ITest } from "./ITest";
 
 export class Test implements ITest {
@@ -5,7 +6,7 @@ export class Test implements ITest {
         // 
     }
     public init(): void {
-        console.log('init');
+        // 
     }
     public appendText(text: string = 'Горячая перезагрузка во всей своей КУРЕЕЕЕЕЕ!!!!!!!!') {
         const root = document.getElementById('root');
